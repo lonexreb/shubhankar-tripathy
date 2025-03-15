@@ -1,4 +1,5 @@
-# Welcome to your Lovable project
+
+# Shubhankar Tripathy - Personal Portfolio
 
 ## Project info
 
@@ -27,7 +28,7 @@ Follow these steps:
 git clone <YOUR_GIT_URL>
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd shubhankar-tripathy
 
 # Step 3: Install the necessary dependencies.
 npm i
@@ -52,13 +53,14 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- Framer Motion
 
 ## How can I deploy this project?
 
