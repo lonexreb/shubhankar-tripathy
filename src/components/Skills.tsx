@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ScrollReveal } from './ui/ScrollReveal';
+import ScrollReveal from './ui/ScrollReveal';
 
 interface SkillCategory {
   name: string;
@@ -13,44 +13,44 @@ interface SkillCategory {
 const Skills = () => {
   const skillCategories: SkillCategory[] = [
     {
-      name: "Frontend Development",
+      name: "Machine Learning & AI",
       skills: [
-        { name: "HTML & CSS", level: 95 },
-        { name: "JavaScript", level: 90 },
-        { name: "React", level: 85 },
-        { name: "TypeScript", level: 80 },
-        { name: "Tailwind CSS", level: 85 },
+        { name: "Machine Learning", level: 95 },
+        { name: "Deep Learning", level: 90 },
+        { name: "Reinforcement Learning", level: 85 },
+        { name: "Generative AI", level: 90 },
+        { name: "Natural Language Processing", level: 85 },
       ],
     },
     {
-      name: "Backend Development",
+      name: "Programming Languages",
       skills: [
-        { name: "Node.js", level: 80 },
-        { name: "Express", level: 75 },
-        { name: "MongoDB", level: 70 },
-        { name: "PostgreSQL", level: 65 },
-        { name: "GraphQL", level: 60 },
+        { name: "Python", level: 95 },
+        { name: "C++", level: 80 },
+        { name: "Java", level: 75 },
+        { name: "JavaScript", level: 85 },
+        { name: "SQL", level: 85 },
       ],
     },
     {
-      name: "Design & Tools",
+      name: "Frameworks & Libraries",
       skills: [
-        { name: "Figma", level: 90 },
-        { name: "Adobe XD", level: 85 },
-        { name: "Git", level: 80 },
-        { name: "Responsive Design", level: 95 },
-        { name: "UX/UI Design", level: 85 },
+        { name: "TensorFlow", level: 90 },
+        { name: "PyTorch", level: 85 },
+        { name: "Scikit-learn", level: 95 },
+        { name: "Hugging Face", level: 85 },
+        { name: "Next.js", level: 80 },
       ],
     },
   ];
 
   return (
-    <section id="skills" className="section bg-secondary/50">
+    <section id="skills" className="section">
       <div className="container mx-auto container-padding">
         <ScrollReveal>
           <h2 className="section-title">Skills & Expertise</h2>
           <p className="section-subtitle">
-            A comprehensive overview of my technical capabilities and proficiencies
+            Technical proficiencies and specialized knowledge areas
           </p>
         </ScrollReveal>
 
@@ -87,10 +87,11 @@ const Skills = () => {
             
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                "Webpack", "Redux", "Next.js", "Vue.js", "SASS/SCSS", 
-                "Firebase", "Jest", "Cypress", "AWS", "Docker", 
-                "CI/CD", "RESTful APIs", "Agile Methodology", "Performance Optimization",
-                "Accessibility", "SEO", "Animation", "Responsive Design"
+                "AWS", "GCP", "Vercel", "Anyscale", "Supabase",
+                "Hume AI EVI2", "Tailwind CSS", "Computer Vision",
+                "Statistical Analysis", "Data Visualization", "Time Series Analysis",
+                "A/B Testing", "Feature Engineering", "Transfer Learning",
+                "MLOps", "LLMs", "Transformers", "Fetch.ai"
               ].map((skill, index) => (
                 <span 
                   key={index} 

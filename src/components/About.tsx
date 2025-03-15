@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ScrollReveal from './ui/ScrollReveal';
-import { Briefcase, GraduationCap, MapPin } from 'lucide-react';
+import { Briefcase, GraduationCap, MapPin, Github, Linkedin, Mail } from 'lucide-react';
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
         <ScrollReveal>
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
-            A passionate professional dedicated to creating meaningful digital solutions
+            Data Scientist and Machine Learning Engineer with a passion for innovative solutions
           </p>
         </ScrollReveal>
 
@@ -19,8 +19,8 @@ const About = () => {
             <div className="relative aspect-square w-full max-w-md mx-auto md:ml-auto rounded-2xl overflow-hidden shadow-card">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
               <img
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
-                alt="Profile"
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+                alt="Shubhankar Tripathy"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -30,16 +30,28 @@ const About = () => {
           <ScrollReveal delay={400}>
             <div className="space-y-6">
               <h3 className="text-2xl font-display font-medium mb-4">
-                Bringing ideas to life through design and technology
+                Pushing the boundaries of machine learning and data science
               </h3>
               
               <p className="text-foreground/80">
-                I'm a dedicated professional with expertise in creating elegant, user-centered digital experiences. With a strong foundation in both design thinking and technical implementation, I bring a holistic approach to every project I undertake.
+                I'm a Data Science and Machine Learning professional currently pursuing my academic journey at UMass Amherst, focusing on Data Science, Machine Learning, Statistics, and Deep Learning. As President of the Data Science Club, I'm passionate about advancing AI literacy and application.
               </p>
               
               <p className="text-foreground/80">
-                My journey in the digital realm has equipped me with the skills to transform complex problems into intuitive solutions. I'm constantly exploring new technologies and methodologies to stay at the cutting edge of the industry.
+                My professional experience includes work at Dell Technologies and various internships where I've applied machine learning and data science to solve real-world problems. I specialize in creating intuitive, AI-driven solutions with a focus on user experience and privacy.
               </p>
+              
+              <div className="flex gap-4 mt-6">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/50 text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                  <Github size={18} />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/50 text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                  <Linkedin size={18} />
+                </a>
+                <a href="mailto:email@example.com" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/50 text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                  <Mail size={18} />
+                </a>
+              </div>
               
               <ul className="space-y-4 mt-8">
                 <li className="flex items-start gap-3">
@@ -48,7 +60,7 @@ const About = () => {
                   </div>
                   <div>
                     <h4 className="font-medium">Professional Experience</h4>
-                    <p className="text-sm text-foreground/70">Over 5 years in digital product development</p>
+                    <p className="text-sm text-foreground/70">Dell Technologies, Internships, Research Positions</p>
                   </div>
                 </li>
                 
@@ -57,8 +69,8 @@ const About = () => {
                     <GraduationCap size={18} />
                   </div>
                   <div>
-                    <h4 className="font-medium">Education Background</h4>
-                    <p className="text-sm text-foreground/70">Bachelor's in Computer Science</p>
+                    <h4 className="font-medium">Education</h4>
+                    <p className="text-sm text-foreground/70">University of Massachusetts Amherst</p>
                   </div>
                 </li>
                 
@@ -68,7 +80,7 @@ const About = () => {
                   </div>
                   <div>
                     <h4 className="font-medium">Location</h4>
-                    <p className="text-sm text-foreground/70">San Francisco, California</p>
+                    <p className="text-sm text-foreground/70">Amherst, Massachusetts</p>
                   </div>
                 </li>
               </ul>

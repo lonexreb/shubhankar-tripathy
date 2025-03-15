@@ -17,30 +17,40 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform built with React and Node.js. Features include user authentication, product filtering, and secure payment processing.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      links: {
-        demo: "#",
-        github: "#",
-      },
-    },
-    {
-      title: "Portfolio Website",
-      description: "A minimalist portfolio website designed to showcase creative work. Features smooth animations and responsive design.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      links: {
-        demo: "#",
-        github: "#",
-      },
-    },
-    {
-      title: "Task Management App",
-      description: "A productivity application that helps users manage tasks and projects. Includes features like task categorization, reminders, and progress tracking.",
+      title: "Helora",
+      description: "Compassionate symptom diagnosis project using Hume AI to detect emotions and provide empathetic medical guidance.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      tags: ["Vue.js", "Firebase", "Tailwind CSS"],
+      tags: ["Machine Learning", "Hume AI", "Healthcare", "Emotion Detection"],
+      links: {
+        demo: "#",
+        github: "#",
+      },
+    },
+    {
+      title: "Maple",
+      description: "An advanced AI-learning platform that adapts to user learning styles and preferences for personalized education.",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      tags: ["AI", "Education", "Adaptive Learning", "Python"],
+      links: {
+        demo: "#",
+        github: "#",
+      },
+    },
+    {
+      title: "Pantry Pal",
+      description: "Privacy-focused MVP food management application that helps users track inventory and suggests recipes based on available ingredients.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      tags: ["Privacy", "NextJS", "TailwindCSS", "Food Tech"],
+      links: {
+        demo: "#",
+        github: "#",
+      },
+    },
+    {
+      title: "GPT-PINN Research",
+      description: "Research paper exploring the integration of Physics-Informed Neural Networks with GPT models for scientific applications.",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      tags: ["Research", "PyTorch", "PINN", "GPT"],
       links: {
         demo: "#",
         github: "#",
@@ -54,11 +64,11 @@ const Projects = () => {
         <ScrollReveal>
           <h2 className="section-title">Featured Projects</h2>
           <p className="section-subtitle">
-            Explore a selection of my recent work and creative endeavors
+            Explore a selection of my recent work in machine learning and data science
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ScrollReveal key={index} delay={index * 100 + 200}>
               <div className="group h-full rounded-xl overflow-hidden bg-card shadow-subtle card-hover flex flex-col border border-border/40">

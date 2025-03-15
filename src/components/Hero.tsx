@@ -18,7 +18,7 @@ const Hero = () => {
           className="mb-4"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-primary text-sm font-medium mb-6">
-            Welcome to my portfolio
+            Data Scientist & Machine Learning Engineer
           </span>
         </motion.div>
         
@@ -28,7 +28,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight md:leading-tight mb-6 text-foreground"
         >
-          Creating digital<br />experiences with purpose
+          Shubhankar<br />Tripathy
         </motion.h1>
         
         <motion.p
@@ -37,8 +37,8 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto mb-12"
         >
-          I bring ideas to life through thoughtful design and elegant code.
-          Focused on creating intuitive interfaces that deliver exceptional user experiences.
+          Leveraging AI and machine learning to solve complex problems with elegant solutions. 
+          UMass Amherst data scientist focused on creating impactful technology.
         </motion.p>
         
         <motion.div

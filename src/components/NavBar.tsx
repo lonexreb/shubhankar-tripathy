@@ -27,7 +27,9 @@ const NavBar = () => {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
+    { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -42,8 +44,8 @@ const NavBar = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#" className="text-primary text-xl font-display font-medium">
-          <span className="sr-only">Portfolio</span>
-          Portfolio
+          <span className="sr-only">Shubhankar Tripathy</span>
+          Shubhankar Tripathy
         </a>
         
         {/* Desktop Navigation */}

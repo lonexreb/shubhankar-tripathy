@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import ScrollReveal from './ui/ScrollReveal';
-import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2, Github, Linkedin } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 const Contact = () => {
@@ -41,12 +41,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section bg-secondary/50">
       <div className="container mx-auto container-padding">
         <ScrollReveal>
           <h2 className="section-title">Get in Touch</h2>
           <p className="section-subtitle">
-            Have a project in mind or want to discuss a collaboration? I'd love to hear from you
+            Interested in working together or have a question? I'd love to hear from you
           </p>
         </ScrollReveal>
 
@@ -63,10 +63,10 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium">Email</h4>
                     <a 
-                      href="mailto:hello@example.com" 
+                      href="mailto:shubhankar@example.com" 
                       className="text-foreground/70 hover:text-primary transition-colors duration-200"
                     >
-                      hello@example.com
+                      shubhankar@example.com
                     </a>
                   </div>
                 </div>
@@ -77,12 +77,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium">Phone</h4>
-                    <a 
-                      href="tel:+1234567890" 
-                      className="text-foreground/70 hover:text-primary transition-colors duration-200"
-                    >
-                      +1 (234) 567-890
-                    </a>
+                    <p className="text-foreground/70">
+                      Available upon request
+                    </p>
                   </div>
                 </div>
                 
@@ -93,16 +90,28 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium">Location</h4>
                     <p className="text-foreground/70">
-                      San Francisco, California
+                      Amherst, Massachusetts
                     </p>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-12 p-6 bg-secondary/50 rounded-lg">
+              <div className="mt-12 mb-6">
+                <h4 className="font-medium mb-4">Connect with me</h4>
+                <div className="flex gap-4">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/50 text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                    <Github size={18} />
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/50 text-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                    <Linkedin size={18} />
+                  </a>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-6 bg-secondary/50 rounded-lg">
                 <h4 className="font-medium mb-4">Available for Opportunities</h4>
                 <p className="text-foreground/80 text-sm">
-                  I'm currently available for freelance work, full-time positions, and creative collaborations. Don't hesitate to reach out!
+                  I'm currently open to full-time positions, research collaborations, and freelance projects in machine learning, data science, and AI development.
                 </p>
               </div>
             </div>

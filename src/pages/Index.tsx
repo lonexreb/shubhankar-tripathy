@@ -4,7 +4,10 @@ import NavBar from '@/components/NavBar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
+import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
+import Education from '@/components/Education';
+import Blog from '@/components/Blog';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -47,7 +50,10 @@ const Index = () => {
         <Hero />
         <About />
         <Projects />
+        <Experience />
         <Skills />
+        <Education />
+        <Blog />
         <Contact />
         <Footer />
       </motion.div>
