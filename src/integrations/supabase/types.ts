@@ -257,6 +257,10 @@ export type Database = {
         Args: { "": string } | { "": unknown }
         Returns: unknown
       }
+      calculate_similarity: {
+        Args: { vec1: string; vec2: string }
+        Returns: number
+      }
       halfvec_avg: {
         Args: { "": number[] }
         Returns: unknown
@@ -288,6 +292,10 @@ export type Database = {
       hnswhandler: {
         Args: { "": unknown }
         Returns: unknown
+      }
+      increment_view_count: {
+        Args: { handle: string }
+        Returns: undefined
       }
       ivfflat_bit_support: {
         Args: { "": unknown }
