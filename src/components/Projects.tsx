@@ -1,143 +1,159 @@
 
 import React from 'react';
-import ScrollReveal from './ui/ScrollReveal';
-import { ArrowUpRight, ExternalLink, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Github, ExternalLink, Star } from 'lucide-react';
+import TerminalWindow from './terminal/TerminalWindow';
 
 interface Project {
   title: string;
   description: string;
-  image: string;
   tags: string[];
+  stars?: number;
   links: {
-    demo?: string;
     github?: string;
+    demo?: string;
   };
 }
 
-const Projects = () => {
-  const projects: Project[] = [
-    {
-      title: "Helora",
-      description: "Compassionate symptom diagnosis project using Hume AI to detect emotions and provide empathetic medical guidance.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      tags: ["Machine Learning", "Hume AI", "Healthcare", "Emotion Detection"],
-      links: {
-        demo: "#",
-        github: "#",
-      },
+const projects: Project[] = [
+  {
+    title: 'site2cli',
+    description:
+      'Turn any website into a CLI/API for AI agents. Progressive formalization with auto API discovery and MCP server generation.',
+    tags: ['Python', 'MCP', 'CLI', 'AI Agents'],
+    stars: 17,
+    links: {
+      github: 'https://github.com/lonexreb/site2cli',
     },
-    {
-      title: "Maple",
-      description: "An advanced AI-learning platform that adapts to user learning styles and preferences for personalized education.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      tags: ["AI", "Education", "Adaptive Learning", "Python"],
-      links: {
-        demo: "#",
-        github: "#",
-      },
+  },
+  {
+    title: 'tentalis',
+    description:
+      'Meta-RL framework for continuous agent improvement with RLHF/GRPO. Event-driven NATS architecture for scalable agent training.',
+    tags: ['Python', 'RLHF', 'GRPO', 'Meta-RL', 'NATS'],
+    links: {
+      github: 'https://github.com/lonexreb/tentalis',
     },
-    {
-      title: "Pantry Pal",
-      description: "Privacy-focused MVP food management application that helps users track inventory and suggests recipes based on available ingredients.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      tags: ["Privacy", "NextJS", "TailwindCSS", "Food Tech"],
-      links: {
-        demo: "#",
-        github: "#",
-      },
+  },
+  {
+    title: 'MCPstudio',
+    description:
+      'Postman for MCP servers. Build, test, and debug Model Context Protocol server implementations.',
+    tags: ['TypeScript', 'MCP', 'FastAPI', 'React'],
+    stars: 2,
+    links: {
+      github: 'https://github.com/lonexreb/MCPstudio',
     },
-    {
-      title: "GPT-PINN Research",
-      description: "Research paper exploring the integration of Physics-Informed Neural Networks with GPT models for scientific applications.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-      tags: ["Research", "PyTorch", "PINN", "GPT"],
-      links: {
-        demo: "#",
-        github: "#",
-      },
-    },
-  ];
+  },
+  {
+    title: 'Zigsaw',
+    description:
+      'Agentic social-marketing content generator using Browser Use. Won YC AI Hackathon for Enterprise Agents.',
+    tags: ['Python', 'Browser Use', 'AI Agents', 'YC'],
+    links: {},
+  },
+];
 
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+};
+
+const Projects = () => {
   return (
     <section id="projects" className="section">
-      <div className="container mx-auto container-padding">
-        <ScrollReveal>
-          <h2 className="section-title">Featured Projects</h2>
-          <p className="section-subtitle">
-            Explore a selection of my recent work in machine learning and data science
+      <div className="container mx-auto container-padding max-w-4xl">
+        <div className="mb-10">
+          <p className="section-title">
+            <span className="terminal-prompt">$ </span>
+            <span className="terminal-command">ls -la ~/projects/</span>
           </p>
-        </ScrollReveal>
+          <p className="section-subtitle">
+            <span className="text-muted-foreground">
+              // {projects.length} items found
+            </span>
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ScrollReveal key={index} delay={index * 100 + 200}>
-              <div className="group h-full rounded-xl overflow-hidden bg-card shadow-subtle card-hover flex flex-col border border-border/40">
-                <div className="relative overflow-hidden aspect-video">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 ease-out-expo group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                
-                <div className="flex-1 p-6 flex flex-col">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-medium">{project.title}</h3>
-                    <span className="inline-flex items-center justify-center p-1 rounded-full bg-primary/5 text-primary transition-transform duration-300 transform translate-y-0 group-hover:translate-y-0">
-                      <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </span>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+        >
+          {projects.map((project) => (
+            <motion.div key={project.title} variants={item}>
+              <TerminalWindow
+                showChrome={false}
+                className="h-full card-hover border border-border hover:border-terminal-cyan/40"
+              >
+                <div className="flex flex-col h-full gap-3">
+                  {/* Title + stars */}
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-mono font-semibold text-base text-terminal-yellow">
+                      {project.title}
+                    </h3>
+                    {project.stars && (
+                      <span className="flex items-center gap-1 text-xs text-terminal-orange font-mono">
+                        <Star size={12} />
+                        {project.stars}
+                      </span>
+                    )}
                   </div>
-                  
-                  <p className="text-muted-foreground mb-4 flex-1">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground">
+
+                  {/* Description */}
+                  <p className="text-foreground/80 text-sm font-sans leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="font-mono text-[11px] px-2 py-0.5 border border-border rounded-sm text-muted-foreground"
+                      >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  
-                  <div className="flex items-center gap-3 mt-auto pt-4 border-t border-border/40">
-                    {project.links.demo && (
-                      <a 
-                        href={project.links.demo} 
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
+
+                  {/* Links */}
+                  <div className="flex items-center gap-3 pt-2 border-t border-border/50">
+                    {project.links.github && (
+                      <a
+                        href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs text-terminal-cyan hover:text-terminal-green transition-colors duration-150"
                       >
-                        <ExternalLink size={14} />
-                        <span>Live Demo</span>
+                        <Github size={13} />
+                        [source]
                       </a>
                     )}
-                    
-                    {project.links.github && (
-                      <a 
-                        href={project.links.github} 
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 ml-auto"
+                    {project.links.demo && (
+                      <a
+                        href={project.links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs text-terminal-cyan hover:text-terminal-green transition-colors duration-150"
                       >
-                        <Github size={14} />
-                        <span>Source Code</span>
+                        <ExternalLink size={13} />
+                        [demo]
                       </a>
                     )}
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
+              </TerminalWindow>
+            </motion.div>
           ))}
-        </div>
-        
-        <ScrollReveal delay={600}>
-          <div className="mt-12 text-center">
-            <a href="#" className="btn-outline">
-              View All Projects
-            </a>
-          </div>
-        </ScrollReveal>
+        </motion.div>
       </div>
     </section>
   );

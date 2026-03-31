@@ -5,9 +5,10 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
-import Skills from '@/components/Skills';
+import Community from '@/components/Community';
+import Recommendations from '@/components/Recommendations';
+import Writing from '@/components/Writing';
 import Education from '@/components/Education';
-import Blog from '@/components/Blog';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -43,17 +44,18 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="min-h-screen"
+        transition={{ duration: 0.4 }}
+        className="min-h-screen bg-background font-mono"
       >
         <NavBar />
         <Hero />
         <About />
         <Projects />
         <Experience />
-        <Skills />
+        <Community />
+        <Recommendations />
+        <Writing />
         <Education />
-        <Blog />
         <Contact />
         <Footer />
       </motion.div>

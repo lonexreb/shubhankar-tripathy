@@ -62,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				terminal: {
+					green: 'hsl(var(--terminal-green))',
+					cyan: 'hsl(var(--terminal-cyan))',
+					purple: 'hsl(var(--terminal-purple))',
+					yellow: 'hsl(var(--terminal-yellow))',
+					orange: 'hsl(var(--terminal-orange))',
+					red: 'hsl(var(--terminal-red))',
+					pink: 'hsl(var(--terminal-pink))',
 				}
 			},
 			borderRadius: {
@@ -79,73 +88,58 @@ export default {
 					to: { height: '0' }
 				},
 				'fade-in': {
-					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
 				'fade-out': {
 					'0%': { opacity: '1', transform: 'translateY(0)' },
-					'100%': { opacity: '0', transform: 'translateY(20px)' }
-				},
-				'fade-in-right': {
-					'0%': { opacity: '0', transform: 'translateX(20px)' },
-					'100%': { opacity: '1', transform: 'translateX(0)' }
-				},
-				'fade-in-left': {
-					'0%': { opacity: '0', transform: 'translateX(-20px)' },
-					'100%': { opacity: '1', transform: 'translateX(0)' }
-				},
-				'slide-in-bottom': {
-					'0%': { opacity: '0', transform: 'translateY(40px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' }
-				},
-				'bounce-subtle': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-5px)' }
-				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
-				'pulse-slow': {
-					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.8' }
+					'100%': { opacity: '0', transform: 'translateY(10px)' }
 				},
 				'scale-in': {
-					'0%': { opacity: '0', transform: 'scale(0.95)' },
+					'0%': { opacity: '0', transform: 'scale(0.97)' },
 					'100%': { opacity: '1', transform: 'scale(1)' }
 				},
 				'scale-out': {
 					'0%': { opacity: '1', transform: 'scale(1)' },
-					'100%': { opacity: '0', transform: 'scale(0.95)' }
+					'100%': { opacity: '0', transform: 'scale(0.97)' }
+				},
+				'blink': {
+					'0%, 50%': { opacity: '1' },
+					'51%, 100%': { opacity: '0' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { boxShadow: '0 0 5px rgba(80, 250, 123, 0.15)' },
+					'50%': { boxShadow: '0 0 15px rgba(80, 250, 123, 0.3)' }
+				},
+				'typing-cursor': {
+					'0%, 50%': { borderColor: 'hsl(var(--terminal-green))' },
+					'51%, 100%': { borderColor: 'transparent' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'fade-out': 'fade-out 0.6s ease-out',
-				'fade-in-right': 'fade-in-right 0.6s ease-out',
-				'fade-in-left': 'fade-in-left 0.6s ease-out',
-				'slide-in-bottom': 'slide-in-bottom 0.7s ease-out',
-				'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite',
-				'float': 'float 5s ease-in-out infinite',
-				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
-				'scale-in': 'scale-in 0.5s ease-out',
-				'scale-out': 'scale-out 0.5s ease-out'
+				'fade-in': 'fade-in 0.4s ease-out',
+				'fade-out': 'fade-out 0.4s ease-out',
+				'scale-in': 'scale-in 0.3s ease-out',
+				'scale-out': 'scale-out 0.3s ease-out',
+				'blink': 'blink 1.06s step-end infinite',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'typing-cursor': 'typing-cursor 1.06s step-end infinite',
 			},
 			fontFamily: {
+				mono: ['JetBrains Mono', 'Fira Code', 'Cascadia Code', 'monospace'],
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],
 			},
 			transitionTimingFunction: {
 				'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
 				'in-expo': 'cubic-bezier(0.7, 0, 0.84, 0)',
+				'snap': 'cubic-bezier(0, 0, 0.2, 1)',
 			},
 			boxShadow: {
-				'subtle': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-				'glass': '0 8px 32px rgba(0, 0, 0, 0.04)',
-				'button': '0 5px 15px rgba(0, 0, 0, 0.08)',
-				'card': '0 20px 50px -10px rgba(0, 0, 0, 0.06)',
+				'terminal': '0 0 20px rgba(80, 250, 123, 0.08)',
+				'terminal-hover': '0 0 25px rgba(139, 233, 253, 0.1)',
+				'terminal-focus': '0 0 0 2px rgba(80, 250, 123, 0.25)',
 			}
 		}
 	},
