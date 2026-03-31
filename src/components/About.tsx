@@ -66,6 +66,15 @@ const socialLinks = [
   },
 ];
 
+const colorMap: Record<string, string> = {
+  'terminal-cyan': 'text-terminal-cyan',
+  'terminal-green': 'text-terminal-green',
+  'terminal-purple': 'text-terminal-purple',
+  'terminal-yellow': 'text-terminal-yellow',
+  'terminal-orange': 'text-terminal-orange',
+  'terminal-pink': 'text-terminal-pink',
+};
+
 const container = {
   hidden: {},
   visible: {
@@ -124,15 +133,15 @@ const About = () => {
         >
           {[
             {
-              src: '/images/AtTuringAwardpng.png',
+              src: '/images/turing-award.jpg',
               caption: 'ACM Awards Ceremony',
             },
             {
-              src: '/images/atYcombinator.png',
+              src: '/images/at-yc.jpg',
               caption: 'At Y Combinator',
             },
             {
-              src: '/images/withProfBruno.png',
+              src: '/images/with-prof-bruno.jpg',
               caption: 'With Prof. Bruno Castro Da Silva',
             },
           ].map((photo) => (
@@ -165,7 +174,7 @@ const About = () => {
               <TerminalWindow showChrome={false} compact>
                 <div className="space-y-1">
                   <h3
-                    className={`font-mono font-semibold text-sm text-${card.color}`}
+                    className={`font-mono font-semibold text-sm ${colorMap[card.color] || 'text-foreground'}`}
                   >
                     {card.title}
                   </h3>

@@ -111,11 +111,7 @@ export default {
 					'0%, 100%': { boxShadow: '0 0 5px rgba(80, 250, 123, 0.15)' },
 					'50%': { boxShadow: '0 0 15px rgba(80, 250, 123, 0.3)' }
 				},
-				'typing-cursor': {
-					'0%, 50%': { borderColor: 'hsl(var(--terminal-green))' },
-					'51%, 100%': { borderColor: 'transparent' }
-				}
-			},
+				},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
@@ -125,8 +121,7 @@ export default {
 				'scale-out': 'scale-out 0.3s ease-out',
 				'blink': 'blink 1.06s step-end infinite',
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-				'typing-cursor': 'typing-cursor 1.06s step-end infinite',
-			},
+				},
 			fontFamily: {
 				mono: ['JetBrains Mono', 'Fira Code', 'Cascadia Code', 'monospace'],
 				sans: ['Inter', 'system-ui', 'sans-serif'],

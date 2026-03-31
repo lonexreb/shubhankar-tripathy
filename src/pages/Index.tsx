@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import NavBar from '@/components/NavBar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -14,30 +14,6 @@ import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Index = () => {
-  useEffect(() => {
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.1,
-    });
-
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-      observer.observe(el);
-    });
-
-    return () => {
-      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
-
   return (
     <AnimatePresence>
       <motion.div
