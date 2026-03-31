@@ -9,6 +9,7 @@ interface Project {
   description: string;
   tags: string[];
   stars?: number;
+  image?: string;
   links: {
     github?: string;
     demo?: string;
@@ -48,9 +49,12 @@ const projects: Project[] = [
   {
     title: 'Zigsaw',
     description:
-      'Agentic social-marketing content generator using Browser Use. Won YC AI Hackathon for Enterprise Agents.',
+      'Agentic social media marketing content generation platform using Browser Use. Won YC AI Hackathon Enterprise Agents (hosted by Dedalus Labs @ YC). Built with Luis Sanchez & Neal Conway.',
     tags: ['Python', 'Browser Use', 'AI Agents', 'YC'],
-    links: {},
+    image: '/images/zigsaw-yc-win.jpg',
+    links: {
+      demo: 'https://zigsaw.dev',
+    },
   },
 ];
 
@@ -94,6 +98,16 @@ const Projects = () => {
                 className="h-full card-hover border border-border hover:border-terminal-cyan/40"
               >
                 <div className="flex flex-col h-full gap-3">
+                  {/* Optional image */}
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-32 object-cover rounded-sm border border-border/50 -mt-1"
+                      loading="lazy"
+                    />
+                  )}
+
                   {/* Title + stars */}
                   <div className="flex items-center justify-between">
                     <h3 className="font-mono font-semibold text-base text-terminal-yellow">
