@@ -181,9 +181,7 @@ function executeCommand(raw: string): string[] {
 }
 
 const InteractiveTerminal: React.FC = () => {
-  const [history, setHistory] = useState<HistoryEntry[]>([
-    { type: 'system', text: "Type 'help' for available commands." },
-  ]);
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [input, setInput] = useState('');
   const [cmdHistory, setCmdHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -297,21 +295,24 @@ const InteractiveTerminal: React.FC = () => {
         </div>
       ))}
 
-      {/* Active prompt */}
+      {/* Active prompt -- this is where the user types */}
       <form onSubmit={handleSubmit} className="flex items-center leading-relaxed">
         <span className="terminal-prompt">$ </span>
-        <input
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent border-none outline-none terminal-command caret-[hsl(var(--terminal-green))] font-mono text-sm ml-0 p-0"
-          autoCapitalize="off"
-          autoCorrect="off"
-          autoComplete="off"
-          spellCheck={false}
-        />
+        <div className="flex-1 relative">
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="type 'help' for commands..."
+            className="w-full bg-transparent border-none outline-none terminal-command caret-[hsl(var(--terminal-green))] font-mono text-sm p-0 placeholder:text-muted-foreground/40 placeholder:font-normal"
+            autoCapitalize="off"
+            autoCorrect="off"
+            autoComplete="off"
+            spellCheck={false}
+          />
+        </div>
       </form>
     </div>
   );
