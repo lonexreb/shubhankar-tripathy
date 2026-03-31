@@ -94,7 +94,7 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center"
     >
-      <div className="container mx-auto px-4 pt-24 pb-8 flex flex-col items-center justify-center max-w-3xl">
+      <div className="container mx-auto px-4 pt-24 pb-8 flex flex-col items-center justify-center max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ const Hero = () => {
           className="w-full"
         >
           <TerminalWindow title="shubhankar@portfolio:~">
-            <div className="space-y-1 min-h-[280px] md:min-h-[260px]">
+            <div className="space-y-1 min-h-[340px] md:min-h-[320px]">
               {lines.map((line, i) => {
                 if (i >= visibleLines) return null;
 

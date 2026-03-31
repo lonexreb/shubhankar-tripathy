@@ -35,7 +35,7 @@ const TerminalWindow: React.FC<TerminalWindowProps> = ({
           </span>
         </div>
       )}
-      <div className={cn('font-mono text-sm', compact ? 'p-3' : 'p-4 md:p-6')}>
+      <div className={cn('font-mono text-sm', compact ? 'p-3' : 'p-5 md:p-8')}>
         {children}
       </div>
     </div>
