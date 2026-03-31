@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Youtube, GraduationCap } from 'lucide-react';
+import { BookOpen, Youtube, GraduationCap, FileText } from 'lucide-react';
 import TerminalWindow from './terminal/TerminalWindow';
 
 interface WritingItem {
@@ -24,6 +24,16 @@ const writings: WritingItem[] = [
     link: 'https://www.youtube.com/watch?v=WjWTxeL8-4M',
     linkLabel: '[watch on youtube]',
     color: 'text-terminal-red',
+  },
+  {
+    title: "Cracking the Brain's Secret Code for Success",
+    type: 'Medium Article',
+    description:
+      'How spike-timing-dependent plasticity (STDP) and dopamine implement a biologically plausible update rule, and why it maps cleanly to TD(λ) and modern RL. Co-authored with Ria Chaudhry.',
+    icon: FileText,
+    link: 'https://medium.com/@reach2shubhankar/cracking-the-brains-secret-code-for-success-how-timing-and-dopamine-decide-what-works-5cb9a3cd0edd',
+    linkLabel: '[read on medium]',
+    color: 'text-terminal-orange',
   },
   {
     title: 'All-In ML',
