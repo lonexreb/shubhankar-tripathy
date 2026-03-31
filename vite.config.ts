@@ -20,6 +20,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Set the base name for production builds
-  base: mode === 'production' ? '/shubhankar-tripathy/' : '/',
+  base: '/',
 }));
